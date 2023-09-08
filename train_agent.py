@@ -16,6 +16,7 @@ def train(
     eps_start: float = 1.0,
     eps_end: float = 0.01,
     eps_decay: float = 0.995,
+    threshold: float = 13.0,
 ) -> List[float]:
     """Deep Q-Learning.
 
@@ -70,10 +71,10 @@ def train(
             logger.info(score_str.format(i_episode, np.mean(scores_window)))
 
         # If the avg score of latest window is above threshold, then stop training and save model
-        if np.mean(scores_window) >= 10.0:
+        if np.mean(scores_window) >= threshold:
             solved_str = '\nEnvironment solved in {:d} episodes!\tAverage Score: {:.2f}'
             logger.info(solved_str.format(i_episode - 100, np.mean(scores_window)))
-            torch.save(agent.qnetwork_local.state_dict(), 'checkpoint.pth')
+            torch.save(agent.qnetwork_local.state_dict(), 'models\\checkpoint.pth')
             break
 
     return scores
