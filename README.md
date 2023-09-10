@@ -1,8 +1,20 @@
 # Project Details
 
-This project trains an agent to interact with Udacity's Bananas World such that it learns to pickup the yellow banans (+1) and ignore the blue bananas (-1).
+This project trains an agent to interact with Udacity's Bananas World such that it learns to pickup the yellow banans (+1) and ignore the blue bananas (-1) within each episode.
 
 The code is written in PyTorch and Python 3.
+
+## Environment
+The below is a paraphrasing from the Udacity course's repo regarding this project's environment:
+
+The goal of the agent is to collect as many yellow bananas (+1) within a given time while avoiding blue bananas (-1). The goal is to get an average score of +13 over 100 consecutive episodes.
+
+According to Udacity: "The state space has 37 dimensions and contains the agent's velocity, along with ray-based perception of objects around agent's forward direction." The agent is able to select from four discrete actions:
+
+* 0 - move forward.
+* 1 - move backward.
+* 2 - turn left.
+* 3 - turn right.
 
 ## Getting Started
 
